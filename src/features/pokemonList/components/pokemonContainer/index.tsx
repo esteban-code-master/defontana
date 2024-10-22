@@ -36,7 +36,6 @@ export const PokemonContainer: FC<PokemonContainerProps> = (props) => {
   };
 
   const onSelect = (pokemon: Pokemon) => {
-    console.log(pokemon);
     setPokemonState((prevState) => ({
       ...prevState,
       pokemonSelect: pokemon

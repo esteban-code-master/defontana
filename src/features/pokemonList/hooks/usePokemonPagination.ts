@@ -13,7 +13,8 @@ export const usePokemonPagination = (
     isFromPagination: true,
     pokemonCache: pokemonsDefault,
     pokemonFilter: pokemonsDefault,
-    pokemonSelect: {} as Pokemon
+    pokemonSelect:
+      pokemonsDefault.length > 0 ? pokemonsDefault[0] : ({} as Pokemon)
   });
   const [totalPage, setTotalPage] = useState<number>(
     Math.ceil(totalCount / EnvConfig.defaultLimit)

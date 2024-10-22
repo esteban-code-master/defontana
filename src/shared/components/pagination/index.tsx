@@ -21,8 +21,11 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
     <div className="flex items-center justify-center lg:gap-4">
       <Button
         variant="text"
-        className="items-center lg:gap-2 rounded-full"
-        onClick={prev}
+        className="flex items-center lg:gap-2 rounded-full"
+        onClick={() => {
+          prev();
+          onPageChange(Math.max(active - 1, 1));
+        }}
         disabled={active === 1}
       >
         <ArrowLeftIcon strokeWidth={2} className="h-4 w-4" />
@@ -45,8 +48,11 @@ export const Pagination: FunctionComponent<PaginationProps> = ({
       </div>
       <Button
         variant="text"
-        className="items-center gap-2 rounded-full"
-        onClick={next}
+        className="flex items-center gap-2 rounded-full"
+        onClick={() => {
+          next();
+          onPageChange(Math.min(active + 1, totalPages));
+        }}
         disabled={active === totalPages}
       >
         <div className="hidden lg:block">Next</div>

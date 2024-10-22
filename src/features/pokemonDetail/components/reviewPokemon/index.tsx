@@ -13,7 +13,8 @@ export const ReviewPokemon: FC<{ pokemon: Pokemon }> = ({ pokemon }) => {
               width={100}
               height={100}
               alt=""
-              src={pokemon.sprites.other?.showdown.front_default as string}
+              src={pokemon?.sprites?.other?.showdown.front_default as string}
+              className="w-[100px] h-auto"
             />
           </div>
         </div>
